@@ -9,6 +9,8 @@ httpClient.interceptors.request.use((config) => {
 	// Logic when you have RL BE Server
 	// const token = JSON.parse(localStorage.getItem("token")!);
 	// if (token) config.headers.Authorization = token;
+	config.headers["X-RapidAPI-Key"] = process.env.REACT_APP_KEY;
+
 	return config;
 });
 

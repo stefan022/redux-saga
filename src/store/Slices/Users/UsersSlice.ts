@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { ISearch } from "../../typescript/interfaces/ISearch";
-import { IUser } from "../../typescript/interfaces/IUser";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ISearch } from "../../../typescript/interfaces/ISearch";
+import { IUser } from "../../../typescript/interfaces/IUser";
 
 interface InitialState {
 	ctaUsers: IUser[];
@@ -26,12 +26,18 @@ const initialState: InitialState = {
 	changed: false,
 };
 
-export const appNamespace = "app";
+export const usersNamespace = "users";
 
 const userSlice = createSlice({
-	name: appNamespace,
+	name: usersNamespace,
 	initialState,
-	reducers: {},
+	reducers: {
+		setCTAUsersAC: (state, action: PayloadAction<InitialState["ctaUsers"]>) => {
+			state.ctaUsers = action.payload;
+		},
+	},
 });
+
+export const { setCTAUsersAC } = userSlice.actions;
 
 export default userSlice;
