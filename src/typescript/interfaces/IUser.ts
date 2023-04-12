@@ -4,5 +4,5 @@ export interface IUser {
 	lastName?: string;
 	email?: string;
 	password?: string;
-	auth?: "admin" | "user";
+	auth?: string;
 }

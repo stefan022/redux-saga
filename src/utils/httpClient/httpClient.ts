@@ -19,7 +19,7 @@ httpClient.interceptors.response.use(
 	(error) => {
 		if (isAxiosError(error) && error?.response?.status === 401) {
 			localStorage.clear();
-			window.location.replace(`${process.env.REACT_APP_URL}${Routes.LOGIN}`);
+			window.location.replace(`${process.env.REACT_APP_BASE_URL}${Routes.LOGIN}`);
 		} else throw error;
 	}
 );

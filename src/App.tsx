@@ -1,8 +1,7 @@
-import React from "react";
-import RoutesComponent from "./Routes/RoutesComponent";
+import Router from "./Routes/Router";
 
-function App() {
-	return <RoutesComponent />;
+const App = (): JSX.Element => {
+	return <Router />;
 }
 
 export default App;
