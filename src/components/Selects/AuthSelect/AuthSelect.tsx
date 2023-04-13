@@ -1,5 +1,5 @@
 import { ChangeEventHandler } from 'react';
-import { jwtAdmin, jwtUser } from 'utils/helpers/jwt'
+import { jwtAdmin } from 'utils/helpers/jwt'
 
 interface IProps {
     auth: string;
@@ -23,9 +23,9 @@ const AuthSelect = ({ auth, handleChange, id }: IProps): JSX.Element => {
                 {auth === jwtAdmin ? "admin" : "user"}
             </option>
             <option 
-                value={auth === jwtUser ? "admin" : "user"}
+                value={auth === jwtAdmin ? "user" : "admin"}
             >
-                {auth === jwtUser ? "admin" : "user"}
+                {auth === jwtAdmin ? "user" : "admin"}
             </option>
         </select>
     )
