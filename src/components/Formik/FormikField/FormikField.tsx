@@ -4,6 +4,7 @@ import { ChangeEventHandler, FocusEventHandler } from "react";
 interface IProps {
     id: string;
     text: string;
+	name: string;
     placeholder: string; 
     value: string;
     error: string | undefined;
@@ -12,7 +13,7 @@ interface IProps {
     handleBlur: FocusEventHandler<HTMLInputElement>;
 };
 
-const FormikField = ({ id, text, placeholder, value, error, touched, handleChange, handleBlur }: IProps): JSX.Element => {
+const FormikField = ({ id, text, name, placeholder, value, error, touched, handleChange, handleBlur }: IProps): JSX.Element => {
 	return (
 		<div className="form__div">
 			<label className="form__label" htmlFor={id}>
@@ -26,7 +27,7 @@ const FormikField = ({ id, text, placeholder, value, error, touched, handleChang
 				}
 				id={id}
 				type="text"
-				name={id}
+				name={name}
 				placeholder={placeholder}
 				value={value}
 				onChange={handleChange}

@@ -71,7 +71,8 @@ const Login = (): JSX.Element => {
             handleSubmit={handleSubmit}
         >
             <FormikField
-                id="email"
+                id="loginEmail"
+                name="email"
                 text="Email"
                 placeholder="example@gmail.com"
                 value={values.email!}
@@ -81,7 +82,8 @@ const Login = (): JSX.Element => {
                 handleBlur={handleBlur}
             />
             <FormikPassword
-                id="password"
+                id="loginPassword"
+                name="password"
                 value={values.password!}
                 error={errors.password}
                 touched={touched.password}

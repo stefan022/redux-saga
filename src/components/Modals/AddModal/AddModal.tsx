@@ -56,8 +56,9 @@ const AddModal = (): JSX.Element => {
                         handleSubmit={handleSubmit}
                     >
                         <FormikField
-                            id="firstName"
+                            id="addFirstName"
                             text="First Name"
+                            name="firstName"
                             placeholder="First Name"
                             value={values.firstName!}
                             error={errors.firstName}
@@ -66,8 +67,9 @@ const AddModal = (): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikField
-                            id="lastName"
+                            id="addLastName"
                             text="Last Name"
+                            name="lastName"
                             placeholder="Last Name"
                             value={values.lastName!}
                             error={errors.lastName}
@@ -76,8 +78,9 @@ const AddModal = (): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikField
-                            id="email"
+                            id="addEmail"
                             text="Email"
+                            name="email"
                             placeholder="example@gmail.com"
                             value={values.email!}
                             error={errors.email}
@@ -86,7 +89,8 @@ const AddModal = (): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikPassword
-                            id="password"
+                            id="addPassword"
+                            name="password"
                             value={values.password!}
                             error={errors.password}
                             touched={touched.password}

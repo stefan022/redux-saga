@@ -64,8 +64,9 @@ const EditModal = ({ userId }: IProps): JSX.Element => {
                         handleSubmit={handleSubmit}
                     >
                         <FormikField
-                            id="firstName"
+                            id="editFirstName"
                             text="First Name"
+                            name="firstName"
                             placeholder="First Name"
                             value={values.firstName!}
                             error={errors.firstName}
@@ -74,8 +75,9 @@ const EditModal = ({ userId }: IProps): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikField
-                            id="lastName"
+                            id="editLastName"
                             text="Last Name"
+                            name="lastName"
                             placeholder="Last Name"
                             value={values.lastName!}
                             error={errors.lastName}
@@ -84,8 +86,9 @@ const EditModal = ({ userId }: IProps): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikField
-                            id="email"
+                            id="editEmail"
                             text="Email"
+                            name="email"
                             placeholder="example@gmail.com"
                             value={values.email!}
                             error={errors.email}
@@ -94,7 +97,8 @@ const EditModal = ({ userId }: IProps): JSX.Element => {
                             handleBlur={handleBlur}
                         />
                         <FormikPassword
-                            id="password"
+                            id="editPassword"
+                            name="password"
                             value={values.password!}
                             error={errors.password}
                             touched={touched.password}

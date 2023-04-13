@@ -14,7 +14,7 @@ const Sidebar = (): JSX.Element => {
     const userId = localStorage.getItem("user");
 
 	const dispatch = useSetGlobalState();
-	const { user } = useGetGlobalState((state: RootState) => state.usersSlice);
+	const { user, users } = useGetGlobalState((state: RootState) => state.usersSlice);
 
 	useEffect(() => {
         if (userId) {
@@ -22,7 +22,7 @@ const Sidebar = (): JSX.Element => {
 
             return;
         }
-	}, [userId]);
+	}, [userId, users]);
 
     return (
         <div className="sidebar">
@@ -33,7 +33,14 @@ const Sidebar = (): JSX.Element => {
 				if (profile) {
 					return (
 						<p className="sidebar__profile" key={id}>
-							Admin: { user.firstName ? user.firstName : "..." }
+							Admin: { 
+								user.firstName === undefined 
+									? "..." 
+									: user.firstName.length > 7 
+										? user.firstName.slice(0, 7) + "..."
+										: user.firstName
+									
+							}
 						</p>
 					)
 				}

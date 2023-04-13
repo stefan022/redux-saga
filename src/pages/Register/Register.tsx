@@ -66,8 +66,9 @@ const Register = (): JSX.Element => {
             handleSubmit={handleSubmit}
         >
             <FormikField
-                id="firstName"
+                id="registerFirstName"
                 text="First Name"
+                name="firstName"
                 placeholder="First Name"
                 value={values.firstName!}
                 error={errors.firstName}
@@ -76,8 +77,9 @@ const Register = (): JSX.Element => {
                 handleBlur={handleBlur}
             />
             <FormikField
-                id="lastName"
+                id="registerLastName"
                 text="Last Name"
+                name="lastName"
                 placeholder="Last Name"
                 value={values.lastName!}
                 error={errors.lastName}
@@ -86,8 +88,9 @@ const Register = (): JSX.Element => {
                 handleBlur={handleBlur}
             />
             <FormikField
-                id="email"
+                id="registerEmail"
                 text="Email"
+                name="email"
                 placeholder="example@gmail.com"
                 value={values.email!}
                 error={errors.email}
@@ -96,7 +99,8 @@ const Register = (): JSX.Element => {
                 handleBlur={handleBlur}
             />
             <FormikPassword
-                id="password"
+                id="registerPassword"
+                name="password"
                 value={values.password!}
                 error={errors.password}
                 touched={touched.password}

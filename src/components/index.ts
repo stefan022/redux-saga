@@ -14,4 +14,4 @@ export { default as LineChart } from "./ChartComponents/LineChart/LineChart"
 export { default as BarChart } from "./ChartComponents/BarChart/BarChart"
 export { default as ChartSelect } from "./Selects/ChartSelect/ChartSelect";
 export { default as ChartsSwitchSelect } from "./Selects/ChartsSwitchSelect/ChartsSwitchSelect";
-export { default as CalendarComponent } from "./CalendarComponent/CalendarComponent";
+export { default as CalendarEvent } from "./CalendarEvent/CalendarEvent";

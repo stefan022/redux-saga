@@ -5,13 +5,14 @@ import FormikError from '../FormikError/FormikError';
 interface IProps {
     id: string;
     value: string;
+    name?: string;
     error: string | undefined;
     touched: boolean | undefined;
     handleChange: ChangeEventHandler<HTMLInputElement>;
     handleBlur: FocusEventHandler<HTMLInputElement>;
 };
 
-const FormikPassword = ({ id, value, touched, error, handleChange, handleBlur }: IProps): JSX.Element => {
+const FormikPassword = ({ id, value, name, touched, error, handleChange, handleBlur }: IProps): JSX.Element => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     return (
@@ -22,7 +23,7 @@ const FormikPassword = ({ id, value, touched, error, handleChange, handleBlur }:
                     className={touched && error ? "form__input border-red-400" : "form__input"}
                     id={id}
                     type={isActive ? "text" : "password"}
-                    name={id}
+                    name={name}
                     placeholder="*********"
                     value={value}
                     onChange={handleChange}

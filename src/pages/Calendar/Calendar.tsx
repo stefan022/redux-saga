@@ -1,5 +1,5 @@
 import Container from 'container/Container'
-import { CalendarComponent, Title } from '../../components'
+import { CalendarEvent, Title } from '../../components'
 import { Box } from '@mui/material'
 import Content from 'content/Content'
 
@@ -10,7 +10,7 @@ const Calendar = () => {
             <Content
                 addClassName="w-[600px]"
             >
-                <CalendarComponent/>
+                <CalendarEvent/>
             </Content>
         </Container>
     )
