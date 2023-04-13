@@ -1,19 +1,7 @@
+import { IFormikField } from "typescript/interfaces/IFormikField";
 import FormikError from "../FormikError/FormikError";
-import { ChangeEventHandler, FocusEventHandler } from "react";
 
-interface IProps {
-    id: string;
-    text: string;
-	name: string;
-    placeholder: string; 
-    value: string;
-    error: string | undefined;
-    touched: boolean | undefined;
-    handleChange: ChangeEventHandler<HTMLInputElement>;
-    handleBlur: FocusEventHandler<HTMLInputElement>;
-};
-
-const FormikField = ({ id, text, name, placeholder, value, error, touched, handleChange, handleBlur }: IProps): JSX.Element => {
+const FormikField = ({ id, text, name, placeholder, value, error, touched, handleChange, handleBlur }: IFormikField): JSX.Element => {
 	return (
 		<div className="form__div">
 			<label className="form__label" htmlFor={id}>

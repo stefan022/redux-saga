@@ -1,21 +1,16 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ISearch } from "../../../typescript/interfaces/ISearch";
 import { IUser } from "../../../typescript/interfaces/IUser";
-import { act } from "react-dom/test-utils";
 import { toast } from "react-toastify";
-import { jwtAdmin, jwtUser } from "utils/helpers/jwt";
 
 interface InitialState {
 	users: IUser[],
 	user: IUser,
-	search: ISearch;
 	status: "idle" | "registered" | "loggedin" | "loggedout";
 }
 
 const initialState: InitialState = {
 	users: [],
 	user: {},
-	search: { category: "", info: "", params: "" },
 	status: "idle",
 };
 

@@ -41,25 +41,25 @@ export const analyticsData: AnalyticsData[] = [
         position: "bottom-middle",
         container: [
             {
-                id: 2,
+                id: 5,
                 xs: 6,
                 position: "bottom-middle",
                 content: "row-2 grid item-4 xs-6",
             },
             {
-                id: 2,
+                id: 6,
                 xs: 6,
                 position: "bottom-middle",
                 content: "row-2 grid item-5 xs-6",
             },
             {
-                id: 6,
+                id: 7,
                 xs: 6,
                 position: "bottom-middle",
                 content: "row-2 grid item-6 xs-6",
             },
             {
-                id: 7,
+                id: 8,
                 xs: 6,
                 position: "bottom-middle",
                 content: "row-2 grid item-7 xs-6",
@@ -67,7 +67,7 @@ export const analyticsData: AnalyticsData[] = [
         ],
     },
     {
-        id: 5,
+        id: 9,
         xs: 4,
         position: "bottom-right",
         content: "row-2 grid item-8 xs-4",

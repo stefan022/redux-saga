@@ -42,7 +42,7 @@ const Analytics = (): JSX.Element => {
 
                             case "bottom-middle":
                                 return (
-                                    <Grid item container spacing={2} xs={5}>
+                                    <Grid key={id} item container spacing={2} xs={5}>
                                         {
                                             container!?.map((data) => {
                                                 const { id, xs, position, content } = data;

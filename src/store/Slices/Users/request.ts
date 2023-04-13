@@ -1,7 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 import { usersNamespace } from "./UsersSlice";
 import { IUser } from "typescript/interfaces/IUser";
-import { validateEmail } from "utils/helpers/validateEmail";
 
 // Users
 //////////

@@ -1,9 +1,6 @@
 import {
-	EventApi,
 	DateSelectArg,
 	EventClickArg,
-	EventContentArg,
-	formatDate,
 } from "@fullcalendar/core";
 
 import FullCalendar from "@fullcalendar/react";

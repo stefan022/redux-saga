@@ -1,18 +1,9 @@
-import { useState, ChangeEventHandler, FocusEventHandler } from 'react'
+import { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import FormikError from '../FormikError/FormikError';
+import { IFormikField } from 'typescript/interfaces/IFormikField';
 
-interface IProps {
-    id: string;
-    value: string;
-    name?: string;
-    error: string | undefined;
-    touched: boolean | undefined;
-    handleChange: ChangeEventHandler<HTMLInputElement>;
-    handleBlur: FocusEventHandler<HTMLInputElement>;
-};
-
-const FormikPassword = ({ id, value, name, touched, error, handleChange, handleBlur }: IProps): JSX.Element => {
+const FormikPassword = ({ id, value, name, touched, error, handleChange, handleBlur }: IFormikField): JSX.Element => {
     const [isActive, setIsActive] = useState<boolean>(false);
 
     return (

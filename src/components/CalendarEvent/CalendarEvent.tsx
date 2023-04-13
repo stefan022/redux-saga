@@ -7,35 +7,32 @@ import "./CalendarEvent.scss"
 import { Modal } from "@mui/material";
 import { useRef, useState } from "react";
 import CalendarDelete from "components/Modals/CalendarDelete/CalendarDelete";
-import FullCalendarComponent from "./FullCalendarComponent";
+import FullCalendarComponent from "./FullCalendarComponent/FullCalendarComponent";
 import CalendarAdd from "components/Modals/CalendarAdd/CalendarAdd";
 
 const CalendarEvent = () => {
-	const [open, setOpen] = useState<boolean>(false);
-	const [ state, setState ] = useState<EventClickArg>();
-	const [openModal2, setOpenModal2] = useState<boolean>(false);
-	const [ stateModal2, setStateModal2 ] = useState<DateSelectArg>();
+	const [ deleteModalActive, setDeleteModalActive] = useState<boolean>(false);
+	const [ addModalActive, setAddModalActive] = useState<boolean>(false);
+	const [ deleteModalInfo, setDeleteModalInfo ] = useState<EventClickArg>();
+	const [ addModalInfo, setAddModalInfo ] = useState<DateSelectArg>();
 
 	const inputRef = useRef<HTMLInputElement>(null);
 
-	const handleDateSelect = (selectInfo: DateSelectArg) => {
-		setOpenModal2(true);
-		setStateModal2(selectInfo);
-	};
-
+	// delete event
 	const handleEventClick = (clickInfo: EventClickArg) => {
-		setOpen(true);
-		setState(clickInfo);
+		setDeleteModalActive(true);
+		setDeleteModalInfo(clickInfo);
 	};
 
-	const handleOpen = () => setOpen(true);
-	const handleClose = () => setOpen(false);
-	const handleCloseModal2 = () => setOpenModal2(false);
-
-	const handleDeleteEvent = (clickInfo: EventClickArg) => {
+	const handleDelete = (clickInfo: EventClickArg) => {
 		clickInfo.event.remove();
+		setDeleteModalActive(false);
+	};
 
-		setOpen(false);
+	// add event
+	const handleDateSelect = (selectInfo: DateSelectArg) => {
+		setAddModalActive(true);
+		setAddModalInfo(selectInfo);
 	};
 
 	const handleAdd = (selectInfo: DateSelectArg) => {
@@ -53,8 +50,12 @@ const CalendarEvent = () => {
 			});
 		}
 
-		setOpenModal2(false);
+		setAddModalActive(false);
 	};
+
+	// close modals
+	const handleCloseDeleteModal = () => setDeleteModalActive(false);
+	const handleCloseAddModal = () => setAddModalActive(false);
 
 	return (
 		<div className="fullcalendar">
@@ -62,17 +63,17 @@ const CalendarEvent = () => {
 				handleDateSelect={handleDateSelect}
 				handleEventClick={handleEventClick}
 			/>
-			<Modal open={open} onClose={handleClose}>
+			<Modal open={deleteModalActive} onClose={handleCloseDeleteModal}>
 				<CalendarDelete
-					handleClose={handleClose}
-					handleDelete={() => handleDeleteEvent(state!)}
+					handleClose={handleCloseDeleteModal}
+					handleDelete={() => handleDelete(deleteModalInfo!)}
 				/>
 			</Modal>
-			<Modal open={openModal2} onClose={handleCloseModal2}>
+			<Modal open={addModalActive} onClose={handleCloseAddModal}>
 				<CalendarAdd
 					inputRef={inputRef}
-					handleClose={handleCloseModal2}
-					handleAdd={() => handleAdd(stateModal2!)}
+					handleClose={handleCloseAddModal}
+					handleAdd={() => handleAdd(addModalInfo!)}
 				/>
 			</Modal>
 		</div>

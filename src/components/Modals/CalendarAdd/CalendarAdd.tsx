@@ -32,7 +32,7 @@ const CalendarAdd = ({ handleAdd, handleClose, inputRef }: IProps) => {
                             className="calendar__add__btn-btn"
                             onClick={handleAdd}
                         >
-                            Send
+                            Set
                         </button>
                     </div>
                 </div>
